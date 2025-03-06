@@ -1,161 +1,204 @@
-# Git Lesson 3: Hands-On
+To complete this Git-based task, you can follow these step-by-step instructions. I will break down each step clearly to help you get through it.
 
-## Objective
-Perform hands-on Git operations to practice essential version control concepts.
+### 1. Create a remote private repo on your GitHub called `tentech_practice`
+- Go to your GitHub account, click on the **+** in the top right, and select **New repository**.
+- Name the repository `tentech_practice` and set it to **private**.
+- Click **Create repository**.
 
-## Steps with Questions and Answers
+### 2. Clone the repository to your local machine
+- Open the terminal and navigate to the `~/Desktop` directory:
+  ```bash
+  cd ~/Desktop
+  ```
+- Clone your repository:
+  ```bash
+  git clone https://github.com/your-username/tentech_practice.git
+  ```
 
-### 1. Create a Remote Repository
-**Q: How do you create a private repository on GitHub?**  
-A: Go to GitHub, click on "New repository," enter `tentech_practice` as the name, select "Private," and click "Create repository."
+### 3. Navigate to your repo directory and verify if you are in the `main` branch
+- Change to the repo directory:
+  ```bash
+  cd tentech_practice
+  ```
+- Verify if you are in the `main` branch:
+  ```bash
+  git branch
+  ```
+  It should show `* main` (indicating that you are currently on the `main` branch).
 
----
+### 4. Create a `homework.txt` file and add content to it
+- Run the following command:
+  ```bash
+  echo "My first git practice" > homework.txt
+  ```
 
-### 2. Clone the Repository
-**Q: How do you clone a repository from GitHub?**  
-A: Use the command:
-   ```sh
-   cd ~/Desktop
-   git clone <repository-url>
-   ```
+### 5. Commit changes to GitHub
+- Stage the changes:
+  ```bash
+  git add homework.txt
+  ```
+- Commit the changes:
+  ```bash
+  git commit -m "Add homework.txt with first line"
+  ```
+- Push the changes to GitHub:
+  ```bash
+  git push origin main
+  ```
 
----
+### 6. Verify the file on GitHub
+- Go to the `tentech_practice` repo on GitHub and check if `homework.txt` appears with "My first git practice" inside.
 
-### 3. Navigate to Repository and Verify Branch
-**Q: How do you check which branch you are on?**  
-A: Use the command:
-   ```sh
-   cd tentech_practice
-   git branch
-   ```
+### 7. Create a new branch called `practice`
+- Run the following command to create the new branch:
+  ```bash
+  git checkout -b practice
+  ```
 
----
+### 8. Verify if you are in the `practice` branch
+- Run:
+  ```bash
+  git branch
+  ```
+  It should show `* practice`.
 
-### 4. Create a File and Add Content
-**Q: How do you create a file and add content in Git?**  
-A: Use the command:
-   ```sh
-   echo "My first git practice" > homework.txt
-   ```
+### 9. Add a second line to the `homework.txt` file
+- Run the command:
+  ```bash
+  echo "Tentech is the best DevOps school" >> homework.txt
+  ```
 
----
+### 10. Commit changes to GitHub
+- Stage the changes:
+  ```bash
+  git add homework.txt
+  ```
+- Commit the changes:
+  ```bash
+  git commit -m "Add second line to homework.txt"
+  ```
+- Push the `practice` branch to GitHub:
+  ```bash
+  git push origin practice
+  ```
 
-### 5. Stage, Commit, and Push Changes
-**Q: What are the steps to save and push changes in Git?**  
-A: Use these commands:
-   ```sh
-   git add homework.txt
-   git commit -m "Added homework.txt"
-   git push origin main
-   ```
+### 11. Verify the file on GitHub (on the `practice` branch)
+- Go to GitHub, switch to the `practice` branch, and verify if `homework.txt` contains the second line "Tentech is the best DevOps school".
 
----
+### 12. Create a New Pull Request
+- On GitHub, create a **Pull Request** from the `practice` branch to `main`.
 
-### 6. Verify `homework.txt` on GitHub
-**Q: How do you check if a file has been pushed successfully?**  
-A: Go to the GitHub repository and check if `homework.txt` appears under the `main` branch.
+### 13. Verify changes in the "Files changed" tab
+- Check the **Files changed** tab to verify the changes.
 
----
+### 14. Approve and merge the Pull Request, and delete the `practice` branch
+- Approve and merge the Pull Request.
+- After merging, you can delete the `practice` branch from GitHub.
 
-### 7-19. Continue with similar format covering all steps...
+### 15. Verify the changes on the `main` branch
+- Switch to the `main` branch and check if the second line is merged:
+  ```bash
+  git checkout main
+  git pull origin main
+  cat homework.txt
+  ```
 
----
+### 16. Delete the `practice` branch locally
+- Since the branch no longer exists on GitHub, run:
+  ```bash
+  git branch -d practice
+  ```
 
-### 20. Create Another File and Add Content
-**Q: How do you create a new file and add content?**  
-A: Use the command:
-   ```sh
-   echo "I like Git" > test.txt
-   ```
+### 17. Verify there is only the `main` branch
+- Run:
+  ```bash
+  git branch
+  ```
+  It should only show `main`.
 
----
+### 18. Check the `homework.txt` file
+- Make sure the `homework.txt` file has 2 lines. If not, run:
+  ```bash
+  git pull origin main
+  ```
 
-### 21. Stage, Commit, and Push Only `test.txt`
-**Q: How do you commit only a specific file?**  
-A: Use these commands:
-   ```sh
-   git add test.txt
-   git commit -m "Added test.txt"
-   git push origin main
-   ```
+### 19. Add a 3rd line to the `homework.txt` file
+- Run:
+  ```bash
+  echo "HELLO WORLD" >> homework.txt
+  ```
 
----
+### 20. Create a second file: `test.txt`
+- Run:
+  ```bash
+  echo "I like Git" > test.txt
+  ```
 
-### 22. Verify `test.txt` on GitHub
-**Q: How do you check if `test.txt` was successfully pushed?**  
-A: Go to the GitHub repository and verify if `test.txt` appears with the correct content.
+### 21. Commit `test.txt` file to GitHub
+- Stage the changes:
+  ```bash
+  git add test.txt
+  ```
+- Commit the changes:
+  ```bash
+  git commit -m "Add test.txt"
+  ```
+- Push the changes:
+  ```bash
+  git push origin main
+  ```
 
----
+### 22. Verify the `test.txt` file on GitHub
+- Go to GitHub and check if `test.txt` is there with the content "I like Git".
 
-### 23. Check If `homework.txt` is Uncommitted
-**Q: How do you check which files have uncommitted changes?**  
-A: Use the command:
-   ```sh
-   git status
-   ```
+### 23. Check if `homework.txt` changes are committed
+- Run:
+  ```bash
+  git status
+  ```
+  It should indicate if any changes in `homework.txt` are not committed yet.
 
----
-
-### 24. Stage, Commit, and Push Only `homework.txt`
-**Q: How do you commit changes to an existing file without affecting other files?**  
-A: Use these commands:
-   ```sh
-   git add homework.txt
-   git commit -m "Updated homework.txt with HELLO WORLD"
-   git push origin main
-   ```
-
----
+### 24. Commit `homework.txt` changes to GitHub
+- If necessary, stage and commit any changes in `homework.txt`:
+  ```bash
+  git add homework.txt
+  git commit -m "Update homework.txt with HELLO WORLD"
+  git push origin main
+  ```
 
 ### 25. Verify `homework.txt` on GitHub
-**Q: How do you ensure your updates to `homework.txt` were pushed?**  
-A: Go to GitHub and check if `homework.txt` contains "HELLO WORLD."
+- Ensure the file has "HELLO WORLD" inside.
 
----
+### 26. Display a list of commits
+- Run:
+  ```bash
+  git log
+  ```
 
-### 26. Display List of Commits
-**Q: How do you see the commit history?**  
-A: Use the command:
-   ```sh
-   git log --oneline
-   ```
+### 27. Create a credentials file
+- Create a file called `credentials.txt` with some sensitive information inside.
 
----
+### 28. Set up `.gitignore` to ignore the `credentials.txt` file
+- Create a `.gitignore` file if not already created and add the `credentials.txt` file to it:
+  ```
+  credentials.txt
+  ```
 
-### 27. Create a Credentials File
-**Q: How do you create a file that contains sensitive information?**  
-A: Use the command:
-   ```sh
-   echo "API_KEY=secret" > credentials
-   ```
+### 29. Stage, commit, and push your changes to the remote repo
+- Stage the changes:
+  ```bash
+  git add .gitignore credentials.txt
+  ```
+- Commit the changes:
+  ```bash
+  git commit -m "Add .gitignore to ignore credentials.txt"
+  ```
+- Push to GitHub:
+  ```bash
+  git push origin main
+  ```
 
----
+### 30. Verify if the `credentials.txt` file is not pushed to the remote repo
+- Verify that `credentials.txt` is not in the GitHub repository.
 
-### 28. Create `.gitignore` and Add `credentials` to It
-**Q: How do you ensure a file is ignored by Git?**  
-A: Use these commands:
-   ```sh
-   echo "credentials" > .gitignore
-   ```
-
----
-
-### 29. Stage, Commit, and Push `.gitignore`
-**Q: How do you commit changes to `.gitignore`?**  
-A: Use these commands:
-   ```sh
-   git add .gitignore
-   git commit -m "Added .gitignore to exclude credentials file"
-   git push origin main
-   ```
-
----
-
-### 30. Verify `credentials` File is NOT Pushed to GitHub
-**Q: How do you confirm that a file was ignored by Git?**  
-A: Check GitHub to ensure the `credentials` file is not present in the repository.
-
----
-
-## Summary
-This hands-on Git lesson covers repository creation, branching, committing, merging, handling ignored files, and verifying changes on GitHub.
+These steps should guide you through the task. Let me know if you need further clarification on any of the steps!
