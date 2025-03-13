@@ -36,4 +36,4 @@ git config --global user.name "Your Name"
 git config --global user.email "your.email@example.com"
 ```
 
-Now, Git is ready to use on Windows! 🚀
+Now, Git is ready to use on Windows!

@@ -72,4 +72,4 @@ git config --global user.email "your.email@example.com"
 
 ---
 
-Now, Git is installed and ready to use on your Mac! 🚀
+Now, Git is installed and ready to use on your Mac! 
